@@ -1,0 +1,17 @@
+uuid: 403b1478-5145-4018-adef-2c456aad1668
+langcode: fr
+status: true
+dependencies: {  }
+id: dev
+label: Dev
+description: 'Configurations related to developpement environnement'
+folder: ../config/splits/dev
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist:
+  - devel.settings
+  - devel.toolbar.settings
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0
