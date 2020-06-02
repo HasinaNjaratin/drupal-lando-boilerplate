@@ -1,6 +1,10 @@
 This project template provides a starter kit to manage drupal project with [Lando](https://docs.lando.dev/config/drupal8.html) and [xdebug](https://xdebug.org/) set.
 It is set with most popular and used modules for drupal, such as [devel](https://www.drupal.org/project/devel), [config_split](https://www.drupal.org/project/config_split), [paragraphs](https://www.drupal.org/project/paragraphs), etc ...
 
+## TODO
+
+Add unversionned.sql to gitignore and replace it as the project progresses.
+
 ## Lando
 
 First you need to [install lando](https://github.com/lando/lando/releases).
@@ -127,4 +131,10 @@ To install or update local environnement : install new components, update databa
 
 ```
 lando drush local-sync
+```
+
+To reset database
+
+```
+lando drush db-import unversionned.sql
 ```
