@@ -1,0 +1,91 @@
+{
+	"name" : "your-project-name",
+	"description" : "Drupal setup with composer and eclipse",
+	"type" : "project",
+	"license" : "GPL-2.0-or-later",
+	"authors" : [{
+			"name" : "HasinaNjaratin <hasina.mailto@gmail.com>",
+			"role" : "Maintener"
+		}
+	],
+	"repositories" : [{
+			"type" : "composer",
+			"url" : "https://packages.drupal.org/8"
+		}
+	],
+	"require" : {
+		"php": ">=7.3",
+		"composer/composer": "^1.9",
+		"composer/installers": "^1.2",
+		"cweagans/composer-patches": "^1.6.5",
+		"drupal/admin_toolbar": "^2.2",
+		"drupal/config_ignore": "^2.2",
+		"drupal/config_split": "^1.4",
+		"drupal/core": "^8.8",
+		"drupal/core-composer-scaffold": "^8.8",
+		"drupal/ctools": "^3.4",
+		"drupal/paragraphs": "^1.11",
+		"drupal/ultimate_cron": "^2.0@alpha",
+		"zaporylie/composer-drupal-optimizations": "^1.0"
+	},
+	"require-dev" : {
+		"drupal/coder": "^8.3",
+		"drupal/console": "^1.0.2",
+		"drupal/devel": "^2.1",
+		"drush/drush": "^9.0.0",
+		"phpunit/phpunit": "^9.1"
+	},
+	"conflict" : {
+		"drupal/drupal" : "*"
+	},
+	"minimum-stability" : "dev",
+	"prefer-stable" : true,
+	"config" : {
+		"autoloader-suffix" : "Drupal8",
+		"discard-changes" : true,
+		"optimize-autoloader" : true,
+		"sort-packages" : true
+	},
+	"autoload" : {
+		"classmap" : [
+			"scripts/composer/ScriptHandler.php"
+		]
+	},
+	"scripts" : {
+		"pre-install-cmd" : "DrupalProject\\composer\\ScriptHandler::checkComposerVersion",
+		"pre-update-cmd" : "DrupalProject\\composer\\ScriptHandler::checkComposerVersion",
+		"post-install-cmd" : "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+		"post-update-cmd" : "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+	},
+	"extra" : {
+		"composer-exit-on-patch-failure" : true,
+		"patchLevel" : {
+			"drupal/core" : "-p2"
+		},
+		"installer-paths" : {
+			"www/core" : [
+				"type:drupal-core"
+			],
+			"www/libraries/{$name}" : [
+				"type:drupal-library"
+			],
+			"www/modules/contrib/{$name}" : [
+				"type:drupal-module"
+			],
+			"www/profiles/contrib/{$name}" : [
+				"type:drupal-profile"
+			],
+			"www/themes/contrib/{$name}" : [
+				"type:drupal-theme"
+			],
+			"drush/Commands/{$name}" : [
+				"type:drupal-drush"
+			]
+		},
+		"drupal-scaffold" : {
+			"locations" : {
+				"web-root" : "www/"
+			}
+		}
+	}
+}
