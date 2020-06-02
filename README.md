@@ -1,5 +1,3 @@
-# Composer template for Drupal projects
-
 This project template provides a starter kit for managing your site
 dependencies with [Composer](https://getcomposer.org/).
 
@@ -55,3 +53,22 @@ $config['config_split.config_split.dev']['status'] = TRUE;
 $config['config_split.config_split.hors_prod']['status'] = FALSE;
 $config['config_split.config_split.prod']['status'] = FALSE;
 ```
+
+### Traductions / *.po
+
+You need to manage po files to configure multilanguage site case.
+
+Translations directory is stored(configured) _/config/translations_
+
+To check for updates
+
+```
+lando drush locale-check
+```
+
+To update
+
+```
+lando drush locale-update
+```
+
