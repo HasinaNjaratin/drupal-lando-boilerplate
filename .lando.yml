@@ -20,3 +20,7 @@ tooling:
     service: appserver
     cmd: >-
       echo "START REINSTALLATION ..." && rm -rf www/core && rm -rf www/modules/contrib && rm -rf www/themes/contrib && composer install && echo "END REINSTALLATION"
+  local-sync:
+      service: appserver
+      cmd: >-
+        echo "START LOCAL SYNCHRONOZATION ..." && composer install && chmod 555 scripts/local.sh && scripts/local.sh && echo "END LOCAL SYNCHRONOZATION"
