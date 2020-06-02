@@ -1,32 +1,48 @@
-This project template provides a starter kit for managing your site
-dependencies with [Composer](https://getcomposer.org/).
+This project template provides a starter kit to manage drupal project with [Lando](https://docs.lando.dev/config/drupal8.html).
+It is set with most popular and used modules for drupal, such as [devel](https://www.drupal.org/project/devel), [config_split](https://www.drupal.org/project/config_split), [paragraphs](https://www.drupal.org/project/paragraphs), etc ...
 
+## Lando
 
-## Usage
+First you need to [install lando](https://github.com/lando/lando/releases).
 
-First you need to [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
-
-> Note: The instructions below refer to the [global composer installation](https://getcomposer.org/doc/00-intro.md#globally).
-You might need to replace `composer` with `php composer.phar` (or similar)
-for your setup.
+> Note: You might need to install `docker` if you do not yet install it for your setup.
 
 After that you clone this project and run
 
 ```
-composer install
+lando start
+```
+
+> Note: Drupal will avalaible through [`http://drupal-lando-boilerplate.lndo.site:8000/`](http://drupal-lando-boilerplate.lndo.site).
+
+## Composer
+
+To install php components, run
+
+```
+lando composer install
 ```
 
 With `composer require ...` you can download new dependencies to your
 installation.
 Example:
 ```
-cd some-dir
-composer require drupal/devel:~1.0
+lando composer require drupal/devel:~1.0
 ```
 
-Use `settings.local.php` to config local settings.
+To check component version, run
 
-### How can I apply patches to downloaded modules?
+```
+lando composer outdated
+```
+
+To update composer packages, run
+
+```
+lando composer update
+```
+
+##### How can I apply patches to downloaded modules?
 
 If you need to apply patches (depending on the project being modified, a pull
 request is often a better solution), you can do so with the
@@ -44,9 +60,23 @@ section of composer.json:
 }
 ```
 
-### Configuration split
+Use _/patches_ directory to put patches files.
 
-Use config_split module to manage configurations
+## Xdebug
+
+This project has a php with an xdebug installed and activated, ready to use.
+
+To set it up with the IDE : [Lando + xdebug + phpstorm](https://docs.lando.dev/guides/lando-phpstorm.html#debugging-drush-commands)
+
+
+## Configuration split
+
+Use [config_split](https://www.drupal.org/project/config_split) module to manage configurations.
+
+There are three splits of configurations :
+- dev : related to developpement environnement (_/config/splits/dev_)
+- hors_prod : related to hors_prod environnement (_/config/splits/hors_prod_)
+- prod : related to prod environnement (_/config/splits/prod_)
 
 ```
 $config['config_split.config_split.dev']['status'] = TRUE;
@@ -54,11 +84,24 @@ $config['config_split.config_split.hors_prod']['status'] = FALSE;
 $config['config_split.config_split.prod']['status'] = FALSE;
 ```
 
-### Traductions / *.po
+To import
+
+```
+lando drush cim -y
+```
+
+To export
+
+```
+lando drush csex -y
+```
+
+
+## Translations
 
 You need to manage po files to configure multilanguage site case.
 
-Translations directory is stored(configured) _/config/translations_
+Translations directory is stored (configured) _/config/translations_
 
 To check for updates
 
@@ -72,3 +115,16 @@ To update
 lando drush locale-update
 ```
 
+## Custom commands
+
+To reinstall composer package, remove vendor, core and contrib modules/themes :
+
+```
+lando drush reinstall
+```
+
+To install or update local environnement : install new components, update database, import configurations, etc ...
+
+```
+lando drush local-sync
+```
