@@ -1,4 +1,4 @@
-This project template provides a starter kit to manage drupal project with [Lando](https://docs.lando.dev/config/drupal8.html).
+This project template provides a starter kit to manage drupal project with [Lando](https://docs.lando.dev/config/drupal8.html) and [xdebug](https://xdebug.org/) set.
 It is set with most popular and used modules for drupal, such as [devel](https://www.drupal.org/project/devel), [config_split](https://www.drupal.org/project/config_split), [paragraphs](https://www.drupal.org/project/paragraphs), etc ...
 
 ## Lando
