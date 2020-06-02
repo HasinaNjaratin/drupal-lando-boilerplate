@@ -46,16 +46,12 @@ section of composer.json:
 }
 ```
 
-### How do I specify a PHP version ?
+### Configuration split
 
-This project supports PHP 5.6 as minimum version (see [Drupal 8 PHP requirements](https://www.drupal.org/docs/8/system-requirements/drupal-8-php-requirements)), however it's possible that a `composer update` will upgrade some package that will then require PHP 7+.
+Use config_split module to manage configurations
 
-To prevent this you can add this code to specify the PHP version you want to use in the `config` section of `composer.json`:
 ```
-"config": {
-    "sort-packages": true,
-    "platform": {
-        "php": "5.6.40"
-    }
-},
+$config['config_split.config_split.dev']['status'] = TRUE;
+$config['config_split.config_split.hors_prod']['status'] = FALSE;
+$config['config_split.config_split.prod']['status'] = FALSE;
 ```
