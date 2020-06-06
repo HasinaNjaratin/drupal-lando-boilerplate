@@ -1,9 +1,12 @@
 This project template provides a starter kit to manage drupal project with [Lando](https://docs.lando.dev/config/drupal8.html) and [xdebug](https://xdebug.org/) set.
 It is set with most popular and used modules for drupal, such as [devel](https://www.drupal.org/project/devel), [config_split](https://www.drupal.org/project/config_split), [paragraphs](https://www.drupal.org/project/paragraphs), etc ...
 
-## TODO
+## unversionned.sql
 
 Add unversionned.sql to gitignore and replace it as the project progresses.
+
+It's just a sql dump of a virgin drupal, to save you time on drupal installation.
+You can delete it if you want to start from a full database installation or replace it with another more recent sql file from your project.
 
 ## Lando
 
@@ -137,4 +140,28 @@ To reset database
 
 ```
 lando drush db-import unversionned.sql
+```
+
+## Phpcs
+
+Phpcs is necessary to control and continue coding in good practice.
+
+The verification is done in the _/www/modules/custom_ directory.
+
+- Run phpcs to list all php code style evaluations :
+
+```
+lando phpcs
+```
+
+- Run phpcsf to fix all php code style evaluations that can be fixed automatically :
+
+```
+lando phpcs-fix
+```
+
+- Run phpcs to summary php code style evaluations :
+
+```
+lando phpcs-summary
 ```

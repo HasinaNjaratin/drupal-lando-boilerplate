@@ -11,6 +11,9 @@ services:
   appserver:
     build:
       - composer install
+      - >-
+        /app/vendor/bin/phpcs --config-set installed_paths
+        /app/vendor/drupal/coder/coder_sniffer
     overrides:
       environment:
         # Support debugging Drush with XDEBUG.
@@ -24,3 +27,22 @@ tooling:
       service: appserver
       cmd: >-
         echo "START LOCAL SYNCHRONOZATION ..." && composer install && chmod 555 scripts/local.sh && scripts/local.sh && echo "END LOCAL SYNCHRONOZATION"
+  phpcs:
+    service: appserver
+    cmd: >-
+      /app/vendor/bin/phpcs --standard=Drupal,DrupalPractice -p --colors ./www/modules/custom
+    options: null
+    description: Run phpcs to list all php code style evaluations.
+  phpcs-fix:
+    service: appserver
+    cmd: >-
+      /app/vendor/bin/phpcbf --standard=Drupal,DrupalPractice -p --colors ./www/modules/custom
+    options: null
+    description: >-
+      Run phpcsf to fix all php code style evaluations that can be fixed automatically.
+  phpcs-summary:
+    service: appserver
+    cmd: >-
+      /app/vendor/bin/phpcs --report=summary --standard=Drupal,DrupalPractice -p --colors ./www/modules/custom
+    options: null
+    description: Run phpcs to summary php code style evaluations.
