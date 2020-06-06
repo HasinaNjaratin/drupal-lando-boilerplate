@@ -1,14 +1,19 @@
-This project template provides a starter kit to manage drupal project with [Lando](https://docs.lando.dev/config/drupal8.html) and [xdebug](https://xdebug.org/) set.
+This project template provides a starter kit to manage drupal project with [Lando](https://docs.lando.dev/config/drupal8.html), [xdebug](https://xdebug.org/) and [grumphp](https://github.com/phpro/grumphp).
 It is set with most popular and used modules for drupal, such as [devel](https://www.drupal.org/project/devel), [config_split](https://www.drupal.org/project/config_split), [paragraphs](https://www.drupal.org/project/paragraphs), etc ...
 
-## unversionned.sql
+**Table of Contents**
 
-Add unversionned.sql to gitignore and replace it as the project progresses.
+- [Lando](#lando)
+- [Composer](#composer)
+- [Xdebug](#xdebug)
+- [Configuration Split](#configuration-split)
+- [Translations](#translations)
+- [Custom commands](#custom-commands)
+- [PHPCS](#phpcs)
+- [unversionned.sql](#unversionnedsql)
+- [Grumphp](#grumphp)
 
-It's just a sql dump of a virgin drupal, to save you time on drupal installation.
-You can delete it if you want to start from a full database installation or replace it with another more recent sql file from your project.
-
-## Lando
+# Lando
 
 First you need to [install lando](https://github.com/lando/lando/releases).
 
@@ -22,7 +27,7 @@ lando start
 
 > Note: Drupal will avalaible through [`http://drupal-lando-boilerplate.lndo.site:8000/`](http://drupal-lando-boilerplate.lndo.site).
 
-## Composer
+# Composer
 
 To install php components, run
 
@@ -49,7 +54,7 @@ To update composer packages, run
 lando composer update
 ```
 
-##### How can I apply patches to downloaded modules?
+#### How can I apply patches to downloaded modules?
 
 If you need to apply patches (depending on the project being modified, a pull
 request is often a better solution), you can do so with the
@@ -69,14 +74,14 @@ section of composer.json:
 
 Use _/patches_ directory to put patches files.
 
-## Xdebug
+# Xdebug
 
 This project has a php with an xdebug installed and activated, ready to use.
 
 To set it up with the IDE : [Lando + xdebug + phpstorm](https://docs.lando.dev/guides/lando-phpstorm.html#debugging-drush-commands)
 
 
-## Configuration split
+# Configuration split
 
 Use [config_split](https://www.drupal.org/project/config_split) module to manage configurations.
 
@@ -104,7 +109,7 @@ lando drush csex -y
 ```
 
 
-## Translations
+# Translations
 
 You need to manage po files to configure multilanguage site case.
 
@@ -122,7 +127,7 @@ To update
 lando drush locale-update
 ```
 
-## Custom commands
+# Custom commands
 
 To reinstall composer package, remove vendor, core and contrib modules/themes :
 
@@ -130,7 +135,7 @@ To reinstall composer package, remove vendor, core and contrib modules/themes :
 lando drush reinstall
 ```
 
-To install or update local environnement : install new components, update database, import configurations, etc ...
+To install or update local environment : install new components, update database, import configurations, etc ...
 
 ```
 lando drush local-sync
@@ -142,7 +147,7 @@ To reset database
 lando drush db-import unversionned.sql
 ```
 
-## Phpcs
+# Phpcs
 
 Phpcs is necessary to control and continue coding in good practice.
 
@@ -165,3 +170,18 @@ lando phpcs-fix
 ```
 lando phpcs-summary
 ```
+
+# unversionned.sql
+
+Add unversionned.sql to gitignore and replace it as the project progresses.
+
+It's just a sql dump of a virgin drupal, to save you time on drupal installation.
+You can delete it if you want to start from a full database installation or replace it with another more recent sql file from your project.
+
+# Grumphp
+
+[grumphp](https://github.com/phpro/grumphp) is used to check the quality of codes before commits.
+
+[PhpLint](https://github.com/phpro/grumphp/blob/master/doc/tasks/phplint.md), [PhpUnit](https://github.com/phpro/grumphp/blob/master/doc/tasks/phplint.md) and [PhpCs](https://github.com/phpro/grumphp/blob/master/doc/tasks/phpcs.md) are launched at each commit.
+
+> Note: phpro/grumphp is fixed in 0.18.1 version because at the moment I write this doc, the recent version of grumphp is not compatible (has conflit) with some drupal dependencies.

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9e70898e3e116aace6a9a248177c6064",
+    "content-hash": "fa60ce62e42832fbc96294bdbb2954e1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7085,6 +7085,76 @@
             "time": "2020-02-09T17:29:51+00:00"
         },
         {
+            "name": "gitonomy/gitlib",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gitonomy/gitlib.git",
+                "reference": "718ca021c67f3ea8f6a5fa5d231ec49675068868"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gitonomy/gitlib/zipball/718ca021c67f3ea8f6a5fa5d231ec49675068868",
+                "reference": "718ca021c67f3ea8f6a5fa5d231ec49675068868",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "php": "^5.6 || ^7.0",
+                "symfony/polyfill-mbstring": "^1.7",
+                "symfony/process": "^3.4|^4.0|^5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7|^6.5|^7.0",
+                "psr/log": "^1.0"
+            },
+            "suggest": {
+                "ext-fileinfo": "Required to determine the mimetype of a blob",
+                "psr/log": "Required to use loggers for reporting of execution"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gitonomy\\Git\\": "src/Gitonomy/Git/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                },
+                {
+                    "name": "Julien Didier",
+                    "email": "genzo.wm@gmail.com"
+                },
+                {
+                    "name": "Grégoire Pineau",
+                    "email": "lyrixx@lyrixx.info"
+                },
+                {
+                    "name": "Alexandre Salomé",
+                    "email": "alexandre.salome@gmail.com"
+                }
+            ],
+            "description": "Library for accessing git",
+            "funding": [
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/gitonomy/gitlib",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-03-23T12:43:44+00:00"
+        },
+        {
             "name": "grasmash/expander",
             "version": "1.0.0",
             "source": {
@@ -7243,6 +7313,97 @@
                 "service"
             ],
             "time": "2017-05-10T09:20:27+00:00"
+        },
+        {
+            "name": "monolog/monolog",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "38914429aac460e8e4616c8cb486ecb40ec90bb1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/38914429aac460e8e4616c8cb486ecb40ec90bb1",
+                "reference": "38914429aac460e8e4616c8cb486ecb40ec90bb1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2",
+                "psr/log": "^1.0.1"
+            },
+            "provide": {
+                "psr/log-implementation": "1.0.0"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "^2.4.9 || ^3.0",
+                "doctrine/couchdb": "~1.0@dev",
+                "elasticsearch/elasticsearch": "^6.0",
+                "graylog2/gelf-php": "^1.4.2",
+                "php-amqplib/php-amqplib": "~2.4",
+                "php-console/php-console": "^3.1.3",
+                "php-parallel-lint/php-parallel-lint": "^1.0",
+                "phpspec/prophecy": "^1.6.1",
+                "phpunit/phpunit": "^8.5",
+                "predis/predis": "^1.1",
+                "rollbar/rollbar": "^1.3",
+                "ruflin/elastica": ">=0.90 <3.0",
+                "swiftmailer/swiftmailer": "^5.3|^6.0"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+                "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+                "elasticsearch/elasticsearch": "Allow sending log messages to an Elasticsearch server via official client",
+                "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+                "ext-mbstring": "Allow to work properly with unicode symbols",
+                "ext-mongodb": "Allow sending log messages to a MongoDB server (via driver)",
+                "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "mongodb/mongodb": "Allow sending log messages to a MongoDB server (via library)",
+                "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
+                "php-console/php-console": "Allow sending log messages to Google Chrome",
+                "rollbar/rollbar": "Allow sending log messages to Rollbar",
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Monolog\\": "src/Monolog"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+            "homepage": "http://github.com/Seldaek/monolog",
+            "keywords": [
+                "log",
+                "logging",
+                "psr-3"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/Seldaek",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/monolog/monolog",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-05-22T08:12:19+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -7447,6 +7608,59 @@
             "time": "2018-07-08T19:19:57+00:00"
         },
         {
+            "name": "php-parallel-lint/php-parallel-lint",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-parallel-lint/PHP-Parallel-Lint.git",
+                "reference": "474f18bc6cc6aca61ca40bfab55139de614e51ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-parallel-lint/PHP-Parallel-Lint/zipball/474f18bc6cc6aca61ca40bfab55139de614e51ca",
+                "reference": "474f18bc6cc6aca61ca40bfab55139de614e51ca",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=5.4.0"
+            },
+            "replace": {
+                "grogy/php-parallel-lint": "*",
+                "jakub-onderka/php-parallel-lint": "*"
+            },
+            "require-dev": {
+                "nette/tester": "^1.3 || ^2.0",
+                "php-parallel-lint/php-console-highlighter": "~0.3",
+                "squizlabs/php_codesniffer": "~3.0"
+            },
+            "suggest": {
+                "php-parallel-lint/php-console-highlighter": "Highlight syntax in code snippet"
+            },
+            "bin": [
+                "parallel-lint"
+            ],
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "./"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jakub Onderka",
+                    "email": "ahoj@jakubonderka.cz"
+                }
+            ],
+            "description": "This tool check syntax of PHP files about 20x faster than serial check.",
+            "homepage": "https://github.com/php-parallel-lint/PHP-Parallel-Lint",
+            "time": "2020-04-04T12:18:32+00:00"
+        },
+        {
             "name": "phpdocumentor/reflection-common",
             "version": "2.1.0",
             "source": {
@@ -7593,6 +7807,110 @@
             ],
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
             "time": "2020-02-18T18:59:58+00:00"
+        },
+        {
+            "name": "phpro/grumphp",
+            "version": "v0.18.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpro/grumphp.git",
+                "reference": "d07e59ebfdd48cf41d12b2af3670abcd1a2b01ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpro/grumphp/zipball/d07e59ebfdd48cf41d12b2af3670abcd1a2b01ef",
+                "reference": "d07e59ebfdd48cf41d12b2af3670abcd1a2b01ef",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "~1.0 || ~2.0",
+                "doctrine/collections": "~1.2",
+                "ext-json": "*",
+                "gitonomy/gitlib": "^1.0.3",
+                "monolog/monolog": "~1.16 || ^2.0",
+                "php": "^7.2",
+                "seld/jsonlint": "~1.1",
+                "symfony/config": "~3.4 || ~4.0 || ~5.0",
+                "symfony/console": "~3.4 || ~4.0 || ~5.0",
+                "symfony/dependency-injection": "~3.4 || ~4.0 || ~5.0",
+                "symfony/event-dispatcher": "~3.4 || ~4.0 || ~5.0",
+                "symfony/filesystem": "~3.4 || ~4.0 || ~5.0",
+                "symfony/finder": "~3.4 || ~4.0 || ~5.0",
+                "symfony/options-resolver": "~3.4 || ~4.0 || ~5.0",
+                "symfony/process": "~3.4 || ~4.0 || ~5.0",
+                "symfony/yaml": "~3.4 || ~4.0 || ~5.0"
+            },
+            "require-dev": {
+                "brianium/paratest": "~3.1 || dev-master",
+                "composer/composer": "~1.9 || ^2.0@dev",
+                "ergebnis/composer-normalize": "~2.1",
+                "jakub-onderka/php-parallel-lint": "~1.0",
+                "nikic/php-parser": "~3.1",
+                "phpspec/phpspec": "~6.1",
+                "phpunit/phpunit": "^7.5.17",
+                "sensiolabs/security-checker": "~6.0",
+                "squizlabs/php_codesniffer": "~3.5"
+            },
+            "suggest": {
+                "atoum/atoum": "Lets GrumPHP run your unit tests.",
+                "behat/behat": "Lets GrumPHP validate your project features.",
+                "brianium/paratest": "Lets GrumPHP run PHPUnit in parallel.",
+                "codeception/codeception": "Lets GrumPHP run your project's full stack tests",
+                "codegyre/robo": "Lets GrumPHP run your automated PHP tasks.",
+                "designsecurity/progpilot": "Lets GrumPHP be sure that there are no vulnerabilities in your code.",
+                "doctrine/orm": "Lets GrumPHP validate your Doctrine mapping files.",
+                "ergebnis/composer-normalize": "Lets GrumPHP tidy and normalize your composer.json file.",
+                "friendsofphp/php-cs-fixer": "Lets GrumPHP automatically fix your codestyle.",
+                "friendsoftwig/twigcs": "Lets GrumPHP check Twig coding standard.",
+                "infection/infection": "Lets GrumPHP evaluate the quality your unit tests",
+                "jakub-onderka/php-parallel-lint": "Lets GrumPHP quickly lint your entire code base.",
+                "maglnet/composer-require-checker": "Lets GrumPHP analyze composer dependencies.",
+                "malukenho/kawaii-gherkin": "Lets GrumPHP lint your Gherkin files.",
+                "nikic/php-parser": "Lets GrumPHP run static analyses through your PHP files.",
+                "phan/phan": "Lets GrumPHP unleash a static analyzer on your code",
+                "phing/phing": "Lets GrumPHP run your automated PHP tasks.",
+                "phpmd/phpmd": "Lets GrumPHP sort out the mess in your code",
+                "phpspec/phpspec": "Lets GrumPHP spec your code.",
+                "phpstan/phpstan": "Lets GrumPHP discover bugs in your code without running it.",
+                "phpunit/phpunit": "Lets GrumPHP run your unit tests.",
+                "povils/phpmnd": "Lets GrumPHP help you detect magic numbers in PHP code.",
+                "roave/security-advisories": "Lets GrumPHP be sure that there are no known security issues.",
+                "sebastian/phpcpd": "Lets GrumPHP find duplicated code.",
+                "sensiolabs/security-checker": "Lets GrumPHP be sure that there are no known security issues.",
+                "squizlabs/php_codesniffer": "Lets GrumPHP sniff on your code.",
+                "sstalle/php7cc": "Lets GrumPHP check PHP 5.3 - 5.6 code compatibility with PHP 7.",
+                "symfony/phpunit-bridge": "Lets GrumPHP run your unit tests with the phpunit-bridge of Symfony.",
+                "symplify/easycodingstandard": "Lets GrumPHP check coding standard.",
+                "vimeo/psalm": "Lets GrumPHP discover errors in your code without running it."
+            },
+            "bin": [
+                "bin/grumphp"
+            ],
+            "type": "composer-plugin",
+            "extra": {
+                "class": "GrumPHP\\Composer\\GrumPHPPlugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "GrumPHP\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Toon Verwerft",
+                    "email": "toon.verwerft@phpro.be"
+                },
+                {
+                    "name": "Community",
+                    "homepage": "https://github.com/phpro/grumphp/graphs/contributors"
+                }
+            ],
+            "description": "A composer plugin that enables source code quality checks.",
+            "time": "2020-05-27T04:48:38+00:00"
         },
         {
             "name": "phpspec/prophecy",
@@ -9062,6 +9380,66 @@
             "time": "2020-03-16T08:31:04+00:00"
         },
         {
+            "name": "symfony/deprecation-contracts",
+            "version": "v2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/deprecation-contracts.git",
+                "reference": "dd99cb3a0aff6cadd2a8d7d7ed72c2161e218337"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/dd99cb3a0aff6cadd2a8d7d7ed72c2161e218337",
+                "reference": "dd99cb3a0aff6cadd2a8d7d7ed72c2161e218337",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "function.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "A generic function and convention to trigger deprecation notices",
+            "homepage": "https://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-05-27T08:34:37+00:00"
+        },
+        {
             "name": "symfony/dom-crawler",
             "version": "v3.4.41",
             "source": {
@@ -9131,6 +9509,76 @@
                 }
             ],
             "time": "2020-05-22T19:35:43+00:00"
+        },
+        {
+            "name": "symfony/options-resolver",
+            "version": "v5.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/options-resolver.git",
+                "reference": "663f5dd5e14057d1954fe721f9709d35837f2447"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/663f5dd5e14057d1954fe721f9709d35837f2447",
+                "reference": "663f5dd5e14057d1954fe721f9709d35837f2447",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/deprecation-contracts": "^2.1",
+                "symfony/polyfill-php80": "^1.15"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\OptionsResolver\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony OptionsResolver Component",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "config",
+                "configuration",
+                "options"
+            ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-05-23T13:08:13+00:00"
         },
         {
             "name": "symfony/polyfill-php80",
