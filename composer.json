@@ -1,6 +1,6 @@
 {
-	"name" : "hasinanjaratin/drupal-setup",
-	"description" : "Drupal setup with lando and grumphp ",
+	"name" : "hasinanjaratin/drupal-lando-boilerplate",
+	"description" : "Drupal setup with lando, composer, xdebug and grumphp ",
 	"type" : "project",
 	"license" : "GPL-2.0-or-later",
 	"authors" : [{
