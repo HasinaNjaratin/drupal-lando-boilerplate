@@ -1,6 +1,6 @@
 {
-	"name" : "your-project-name",
-	"description" : "Drupal setup with composer and eclipse",
+	"name" : "hasinanjaratin/drupal-setup",
+	"description" : "Drupal setup with lando and grumphp ",
 	"type" : "project",
 	"license" : "GPL-2.0-or-later",
 	"authors" : [{
