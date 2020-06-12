@@ -4,13 +4,13 @@ It is set with most popular and used modules for drupal, such as [devel](https:/
 **Table of Contents**
 
 - [Lando](#lando)
+- [Create Website](#create-website)
 - [Composer](#composer)
 - [Xdebug](#xdebug)
 - [Configuration Split](#configuration-split)
 - [Translations](#translations)
 - [Custom commands](#custom-commands)
 - [PHPCS](#phpcs)
-- [unversionned.sql](#unversionnedsql)
 - [Grumphp](#grumphp)
 
 # Lando
@@ -25,7 +25,17 @@ After that you clone this project and run
 lando start
 ```
 
-> Note: Drupal will avalaible through [`http://drupal-lando-boilerplate.lndo.site:8000/`](http://drupal-lando-boilerplate.lndo.site).
+> Note: Drupal will avalaible through [`http://drupal-lando-boilerplate.lndo.site:8080/`](http://drupal-lando-boilerplate.lndo.site:8080).
+
+# Create Website
+
+To init/create drupal website :
+
+```
+lando init-site
+```
+
+All parameters about site installation (site name, admin login, etc ...) are configured in _.lando/settings/site_config.sh_ file.
 
 # Composer
 
@@ -113,8 +123,6 @@ lando drush csex -y
 
 You need to manage po files to configure multilanguage site case.
 
-Translations directory is stored (configured) _/config/translations_
-
 To check for updates
 
 ```
@@ -144,7 +152,7 @@ lando drush local-sync
 To reset database
 
 ```
-lando drush db-import unversionned.sql
+lando drush db-import <your-dump>.sql
 ```
 
 # Phpcs
@@ -170,13 +178,6 @@ lando phpcs-fix
 ```
 lando phpcs-summary
 ```
-
-# unversionned.sql
-
-Add unversionned.sql to gitignore and replace it as the project progresses.
-
-It's just a sql dump of a virgin drupal, to save you time on drupal installation.
-You can delete it if you want to start from a full database installation or replace it with another more recent sql file from your project.
 
 # Grumphp
 
