@@ -1,18 +1,50 @@
+# Ignore drupal core
 /vendor
-/console
 /www/core
-/www/profiles
-/.editorconfig
+/www/modules/README.txt
+/www/profiles/README.txt
+/www/themes/README.txt
+/www/sites/README.txt
+/www/sites/example.*
+/www/sites/.gitignore
+/www/.csslintrc
+/www/.editorconfig
+/www/.eslintignore
+/www/.eslintrc.json
+/www/.gitattributes
+/www/.ht.router.php
+/www/.htaccess
+/www/autoload.php
+/www/example.gitignore
+/www/index.php
+/www/INSTALL.txt
+/www/LICENSE.txt
+/www/README.txt
+/www/robots.txt
+/www/update.php
+/www/web.config
+
+# Ignore contrib modules and themes
 /www/modules/contrib
 /www/themes/contrib
-/www/sites/example.settings.local.php
-/www/sites/example.sites.php
-/www/sites/default/files
-/www/sites/default/private
-/www/sites/default/default.services.yml
-/www/sites/default/default.settings.php
-/www/sites/default/settings.local.php
+
+# Ignore configuration files that may contain sensitive information
+/www/sites/*/*settings*.php
+/www/sites/*/*services*.yml
+
+# Ignore paths that may contain user-generated content
+/www/sites/*/files
+/www/sites/*/public
+/www/sites/*/private
+
+# Ignore paths that may contain temporary files
+/www/sites/*/translations
+/www/sites/*/tmp
+/www/sites/*/cache
+
+# Ignore IDE config files
 /.buildpath
 /.settings/
 /.project
 /.idea
+/.editorconfig
