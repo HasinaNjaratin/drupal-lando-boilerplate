@@ -19,20 +19,20 @@ services:
         # Support debugging Drush with XDEBUG.
         PHP_IDE_CONFIG: "serverName=appserver"
 tooling:
-  init-site:
+  site-install:
     service: appserver
     cmd: >-
-      chmod 555 .lando/settings/site_config.sh && chmod 555 .lando/scripts/init_site.sh && .lando/scripts/init_site.sh
+      chmod 555 .lando/settings/site_config.sh && chmod 555 .lando/scripts/site_install.sh && .lando/scripts/site_install.sh
     description: Initialize/Create/reinstall site.
-  reinstall:
+  composer-reset:
     service: appserver
     cmd: >-
-      chmod 555 .lando/scripts/reinstall.sh && .lando/scripts/reinstall.sh
+      chmod 555 .lando/scripts/composer_reset.sh && .lando/scripts/composer_reset.sh
     description: Re install composer.
-  local-sync:
+  site-update:
     service: appserver
     cmd: >-
-      chmod 555 .lando/scripts/local_sync.sh && .lando/scripts/local_sync.sh
+      chmod 555 .lando/scripts/site_update.sh && .lando/scripts/site_update.sh
     description: Update local environment.
   phpcs:
     service: appserver

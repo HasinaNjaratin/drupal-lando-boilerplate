@@ -4,7 +4,7 @@ It is set with most popular and used modules for drupal, such as [devel](https:/
 **Table of Contents**
 
 - [Lando](#lando)
-- [Create Website](#create-website)
+- [Drupal generator](#drupal-generator)
 - [Composer](#composer)
 - [Xdebug](#xdebug)
 - [Configuration Split](#configuration-split)
@@ -27,12 +27,12 @@ lando start
 
 > Note: Drupal will avalaible through [`http://drupal-lando-boilerplate.lndo.site:8080/`](http://drupal-lando-boilerplate.lndo.site:8080).
 
-# Create Website
+# Drupal generator
 
 To init/create drupal website :
 
 ```
-lando init-site
+lando site-install
 ```
 
 All parameters about site installation (site name, admin login, etc ...) are configured in _.lando/settings/site_config.sh_ file.
@@ -140,13 +140,13 @@ lando drush locale-update
 To reinstall composer package, remove vendor, core and contrib modules/themes :
 
 ```
-lando drush reinstall
+lando composer-reset
 ```
 
 To install or update local environment : install new components, update database, import configurations, etc ...
 
 ```
-lando drush local-sync
+lando site-update
 ```
 
 To reset database
